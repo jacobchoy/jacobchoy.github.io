@@ -1,18 +1,17 @@
 body {
     font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
+    background-color: #003366; /* Dark blue */
     text-align: center;
     margin: 0;
     padding: 20px;
 }
 
-h1 {
-    color: #333;
+h1, p {
+    color: white; /* White color for both h1 and p */
 }
-
 button {
     padding: 10px 20px;
-    background: blue;
+    background: rgb(110, 28, 106);
     color: white;
     border: none;
     cursor: pointer;
@@ -20,5 +19,5 @@ button {
 }
 
 button:hover {
-    background: darkblue;
+    background: rgb(109, 139, 0);
 }
