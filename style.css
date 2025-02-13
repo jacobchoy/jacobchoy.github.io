@@ -1,6 +1,6 @@
 body {
     font-family: Arial, sans-serif;
-    background-color: #003366; /* Dark blue */
+    background-color: #a74a80; /* Dark blue */
     text-align: center;
     margin: 0;
     padding: 20px;
@@ -11,7 +11,7 @@ h1, p {
 }
 button {
     padding: 10px 20px;
-    background: rgb(110, 28, 106);
+    background: rgb(185, 36, 93);
     color: white;
     border: none;
     cursor: pointer;
@@ -19,5 +19,9 @@ button {
 }
 
 button:hover {
-    background: rgb(109, 139, 0);
+    background: rgb(82, 5, 37);
+}
+img {
+    width: 500px;
+    height: auto; /* Keeps the aspect ratio */
 }
