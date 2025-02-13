@@ -9,6 +9,7 @@ body {
 h1, p {
     color: white; /* White color for both h1 and p */
 }
+
 button {
     padding: 10px 20px;
     background: rgb(185, 36, 93);
@@ -16,11 +17,14 @@ button {
     border: none;
     cursor: pointer;
     font-size: 16px;
+    margin: 10px; /* Space between buttons */
+    display: inline-block; /* Ensures buttons are side by side */
 }
 
 button:hover {
     background: rgb(82, 5, 37);
 }
+
 img {
     width: 500px;
     height: auto; /* Keeps the aspect ratio */
