@@ -12,7 +12,7 @@ h1, p {
 
 button {
     padding: 10px 20px;
-    background: rgb(185, 36, 93);
+    background: rgb(177, 95, 127);
     color: white;
     border: none;
     cursor: pointer;
@@ -26,6 +26,6 @@ button:hover {
 }
 
 img {
-    width: 1000px;
+    width: 600px;
     height: auto; /* Keeps the aspect ratio */
 }

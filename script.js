@@ -8,10 +8,10 @@ document.addEventListener("DOMContentLoaded", function() {
     document.body.appendChild(btnNo);
 
     btnYes.addEventListener("click", function() {
-        alert("You clicked Yes!");
+        alert("Woohooo!!!");
     });
 
     btnNo.addEventListener("click", function() {
-        alert("You clicked No!");
+        alert("aw what the hell man");
     });
 });
