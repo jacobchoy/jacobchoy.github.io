@@ -1,5 +1,5 @@
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Fredoka', sans-serif;
     background-color: #a74a80; /* Dark blue */
     text-align: center;
     margin: 0;
@@ -26,6 +26,6 @@ button:hover {
 }
 
 img {
-    width: 500px;
+    width: 1000px;
     height: auto; /* Keeps the aspect ratio */
 }
