@@ -1,31 +1,67 @@
+/* General body styling */
 body {
     font-family: 'Fredoka', sans-serif;
-    background-color: #a74a80; /* Dark blue */
+    background-color: #a74a80; /* Pinkish background */
     text-align: center;
     margin: 0;
-    padding: 20px;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh; /* Full viewport height */
 }
 
+/* Container to center content */
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Text styling */
 h1, p {
-    color: white; /* White color for both h1 and p */
+    color: white; /* White text */
+    margin: 10px 0; /* Spacing between elements */
 }
 
+/* Image styling */
+img {
+    width: 300px; /* Adjust as needed */
+    height: auto; /* Maintain aspect ratio */
+    margin: 20px 0; /* Space above and below the image */
+}
+
+/* Button container styling */
+.button-container {
+    display: flex;
+    gap: 20px; /* Space between buttons */
+    margin-top: 20px; /* Space above the buttons */
+}
+
+/* Button styling */
 button {
     padding: 10px 20px;
-    background: rgb(177, 95, 127);
+    background: rgb(177, 95, 127); /* Pinkish button color */
     color: white;
     border: none;
     cursor: pointer;
     font-size: 16px;
-    margin: 10px; /* Space between buttons */
-    display: inline-block; /* Ensures buttons are side by side */
+    border-radius: 5px; /* Rounded corners */
+    transition: background 0.3s ease; /* Smooth hover effect */
 }
 
+/* Hover effect for buttons */
 button:hover {
-    background: rgb(82, 5, 37);
+    background: rgb(82, 5, 37); /* Darker pink on hover */
 }
 
-img {
-    width: 400px;
-    height: auto; /* Keeps the aspect ratio */
+/* Specific styling for the "No" button */
+#noButton {
+    background: #ccc; /* Gray for the "No" button */
+    color: #333; /* Dark text for contrast */
+}
+
+#noButton:hover {
+    background: #999; /* Darker gray on hover */
 }
