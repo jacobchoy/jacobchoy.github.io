@@ -1,13 +1,10 @@
 body {
-    font-family: 'Fredoka', sans-serif;
-    background-color: #a74a80; /* Pinkish background */
+    background-color: #0a192f;
+    color: #ccd6f6;
+    font-family: Arial, sans-serif;
     text-align: center;
     margin: 0;
     padding: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh; /* Full viewport height */
 }
 
 .container {
@@ -15,45 +12,38 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    height: 100vh;
 }
 
-h1, p {
-    color: white; /* White text */
-    margin: 10px 0; /* Spacing between elements */
+.headshot {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    border: 3px solid #64ffda;
+    margin-bottom: 20px;
 }
 
-img {
-    width: 300px; /* Adjust as needed */
-    height: auto; /* Maintain aspect ratio */
-    margin: 20px 0; /* Space above and below the image */
+nav a {
+    color: #64ffda;
+    text-decoration: none;
+    font-size: 1.2em;
+    margin: 10px;
 }
 
-.button-container {
-    display: flex;
-    gap: 20px; /* Space between buttons */
-    margin-top: 20px; /* Space above the buttons */
+nav a:hover {
+    text-decoration: underline;
 }
 
 button {
-    padding: 10px 20px;
-    background: rgb(177, 95, 127); /* Pinkish button color */
-    color: white;
+    margin-top: 20px;
+    background-color: #64ffda;
     border: none;
+    padding: 10px 20px;
+    font-size: 1.2em;
     cursor: pointer;
-    font-size: 16px;
-    border-radius: 5px; /* Rounded corners */
-    transition: background 0.3s ease; /* Smooth hover effect */
+    border-radius: 5px;
 }
 
 button:hover {
-    background: rgb(82, 5, 37); /* Darker pink on hover */
-}
-
-#noButton {
-    background: #ccc; /* Gray for the "No" button */
-    color: #333; /* Dark text for contrast */
-}
-
-#noButton:hover {
-    background: #999; /* Darker gray on hover */
+    background-color: #52e0c4;
 }
