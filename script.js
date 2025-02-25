@@ -1,6 +1,11 @@
 document.addEventListener("DOMContentLoaded", () => {
     const confettiButton = document.getElementById("confettiButton");
-    
+    const toggleThemeButton = document.getElementById("toggleThemeButton");
+
+    toggleThemeButton.addEventListener("click", () => {
+        document.body.classList.toggle("light-mode");
+    });
+
     confettiButton.addEventListener("click", () => {
         confetti({
             particleCount: 100,
