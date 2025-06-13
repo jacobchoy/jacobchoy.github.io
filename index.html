@@ -72,6 +72,7 @@
             display: flex;
             gap: 2rem;
             list-style: none;
+            align-items: center;
         }
 
         .nav-links a {
@@ -89,6 +90,91 @@
             color: var(--white);
             transform: translateY(-2px);
             box-shadow: 0 5px 15px rgba(102, 126, 234, 0.3);
+        }
+
+        /* Dropdown Styles */
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropdown-btn {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            text-decoration: none;
+            color: var(--text-dark);
+            font-weight: 500;
+            padding: 0.5rem 1rem;
+            border-radius: 25px;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            background: none;
+            border: none;
+            font-family: inherit;
+            font-size: inherit;
+        }
+
+        .dropdown-btn:hover, .dropdown-btn.active {
+            background: var(--gradient);
+            color: var(--white);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.3);
+        }
+
+        .dropdown-arrow {
+            transition: transform 0.3s ease;
+            font-size: 0.8rem;
+        }
+
+        .dropdown.active .dropdown-arrow {
+            transform: rotate(180deg);
+        }
+
+        .dropdown-menu {
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--white);
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+            padding: 1rem 0;
+            min-width: 200px;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateX(-50%) translateY(-10px);
+            transition: all 0.3s ease;
+            z-index: 1001;
+            border: 1px solid var(--border-color);
+        }
+
+        .dropdown.active .dropdown-menu {
+            opacity: 1;
+            visibility: visible;
+            transform: translateX(-50%) translateY(0);
+        }
+
+        .dropdown-item {
+            display: block;
+            padding: 0.8rem 1.5rem;
+            color: var(--text-dark);
+            text-decoration: none;
+            transition: all 0.3s ease;
+            border-left: 3px solid transparent;
+        }
+
+        .dropdown-item:hover {
+            background: var(--light-bg);
+            border-left-color: var(--primary-color);
+            color: var(--primary-color);
+        }
+
+        .dropdown-item.active {
+            background: var(--light-bg);
+            border-left-color: var(--primary-color);
+            color: var(--primary-color);
+            font-weight: 600;
         }
 
         /* Page Content */
@@ -287,6 +373,55 @@
             box-shadow: 0 10px 25px rgba(102, 126, 234, 0.4);
         }
 
+        /* Project Pages */
+        .project-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .project-header h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .project-header p {
+            font-size: 1.2rem;
+            color: var(--text-light);
+        }
+
+        .project-content {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .project-section {
+            background: var(--light-bg);
+            padding: 2rem;
+            border-radius: 15px;
+            border-left: 4px solid var(--primary-color);
+            margin-bottom: 2rem;
+        }
+
+        .project-section h3 {
+            color: var(--text-dark);
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+
+        .project-section p {
+            line-height: 1.8;
+            color: var(--text-medium);
+            margin-bottom: 1rem;
+        }
+
+        .project-section:last-child {
+            margin-bottom: 0;
+        }
+
         /* Coming Soon Pages */
         .coming-soon {
             text-align: center;
@@ -320,6 +455,17 @@
 
             .nav-links {
                 gap: 1rem;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .dropdown-menu {
+                position: fixed;
+                left: 50%;
+                top: auto;
+                transform: translateX(-50%);
+                width: 90%;
+                max-width: 300px;
             }
 
             .hero h1 {
@@ -343,6 +489,10 @@
             .skills-grid {
                 grid-template-columns: 1fr;
             }
+
+            .project-header h2 {
+                font-size: 2rem;
+            }
         }
     </style>
 </head>
@@ -354,7 +504,17 @@
                 <ul class="nav-links">
                     <li><a href="#about" class="nav-link active">About</a></li>
                     <li><a href="#game" class="nav-link">Game</a></li>
-                    <li><a href="#project" class="nav-link">Project</a></li>
+                    <li class="dropdown">
+                        <button class="dropdown-btn">
+                            Projects
+                            <span class="dropdown-arrow">▼</span>
+                        </button>
+                        <div class="dropdown-menu">
+                            <a href="#data-analysis" class="dropdown-item">Data Analysis Project</a>
+                            <a href="#project-2" class="dropdown-item">Project 2 (Coming Soon)</a>
+                            <a href="#project-3" class="dropdown-item">Project 3 (Coming Soon)</a>
+                        </div>
+                    </li>
                 </ul>
             </div>
         </nav>
@@ -366,7 +526,7 @@
                     <img src="headshot.png" alt="Jacob Choy" onerror="this.style.display='none'">
                 </div>
                 <h1>Jacob Choy</h1>
-                <p class="subtitle">Aspiring Data Science Analyst & Computer Science Student</p>
+                <p class="subtitle">Honours Bachelor of Science, HBSC, Computer Science</p>
             </div>
 
             <div class="about-tabs">
@@ -379,12 +539,8 @@
                     <div id="about-content" class="tab-pane active">
                         <div class="about-section">
                             <p>
-                                <!-- Add your personal text here -->
-                                Welcome to my portfolio! I'm passionate about data science and computer science, constantly exploring new technologies and methodologies to solve complex problems. 
-                            </p>
-                            <p>
-                                <!-- Add more about yourself here -->
-                                I enjoy working on challenging projects that combine analytical thinking with creative problem-solving. When I'm not coding, you can find me exploring new datasets or learning about the latest developments in machine learning and AI.
+                                 Hey! Welcome to my portfolio. My name's Jacob Choy, and I'm a third-year Computer Science Major at Wilfrid Laurier University, and I'm also working towards a minor in Enviromental Studies. I'm passionate about data analysis and methodologies. I love solving puzzles and finding unique solutions.                                  When I'm not grinding out my data algorithms class, you can find me listening to my records, learning to play the guitar or going on a morning run.
+
                             </p>
                         </div>
                     </div>
@@ -486,19 +642,56 @@
         <div id="game" class="page">
             <div class="coming-soon">
                 <div class="coming-soon-icon">🎮</div>
-                <h2>Game Coming Soon</h2>
-                <p>I'm working on an exciting interactive game that will be available here soon!</p>
+                <h2>Still under construction!</h2>
                 <p>Stay tuned for updates.</p>
             </div>
         </div>
 
-        <!-- Project Page -->
-        <div id="project" class="page">
+        <!-- Data Analysis Project Page -->
+        <div id="data-analysis" class="page">
+            <div class="project-header">
+                <h2>Data Analysis Project</h2>
+                <p>Exploring data insights and methodologies</p>
+            </div>
+            
+            <div class="project-content">
+                <div class="project-section">
+                    <h3>🎯 Project Overview</h3>
+                    <p>This project showcases my passion for data analysis and problem-solving methodologies. Using various analytical techniques and tools, I've explored meaningful insights from complex datasets.</p>
+                </div>
+                
+                <div class="project-section">
+                    <h3>🛠️ Technologies Used</h3>
+                    <p>Python for data processing and analysis, SQL for database queries, Excel and Power BI for visualization, and R for statistical analysis. The project demonstrates proficiency across multiple data analysis platforms.</p>
+                </div>
+                
+                <div class="project-section">
+                    <h3>📊 Key Findings</h3>
+                    <p>Through systematic analysis and visualization, this project uncovered unique solutions to complex data challenges. The methodologies applied can be scaled and adapted for various data analysis scenarios.</p>
+                </div>
+                
+                <div class="project-section">
+                    <h3>🚀 Future Development</h3>
+                    <p>Plans include expanding the analysis with machine learning techniques, implementing real-time data processing, and developing interactive dashboards for better data visualization.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Project 2 Page (Coming Soon) -->
+        <div id="project-2" class="page">
             <div class="coming-soon">
-                <div class="coming-soon-icon">🚀</div>
-                <h2>Project Demonstration</h2>
-                <p>I'm preparing a comprehensive demonstration of my personal project.</p>
-                <p>This section will showcase my latest work and technical achievements.</p>
+                <div class="coming-soon-icon">🔧</div>
+                <h2>Project 2</h2>
+                <p>Coming Soon! This project is currently in development.</p>
+            </div>
+        </div>
+
+        <!-- Project 3 Page (Coming Soon) -->
+        <div id="project-3" class="page">
+            <div class="coming-soon">
+                <div class="coming-soon-icon">⚡</div>
+                <h2>Project 3</h2>
+                <p>Coming Soon! This project is currently in development.</p>
             </div>
         </div>
     </div>
@@ -507,14 +700,21 @@
         // Navigation functionality
         const navLinks = document.querySelectorAll('.nav-link');
         const pages = document.querySelectorAll('.page');
+        const dropdownItems = document.querySelectorAll('.dropdown-item');
+        const dropdown = document.querySelector('.dropdown');
+        const dropdownBtn = document.querySelector('.dropdown-btn');
 
+        // Handle regular nav links
         navLinks.forEach(link => {
             link.addEventListener('click', (e) => {
                 e.preventDefault();
                 
-                // Remove active class from all links and pages
+                // Remove active class from all elements
                 navLinks.forEach(l => l.classList.remove('active'));
+                dropdownItems.forEach(item => item.classList.remove('active'));
+                dropdownBtn.classList.remove('active');
                 pages.forEach(p => p.classList.remove('active'));
+                dropdown.classList.remove('active');
                 
                 // Add active class to clicked link
                 link.classList.add('active');
@@ -523,6 +723,42 @@
                 const targetPage = link.getAttribute('href').substring(1);
                 document.getElementById(targetPage).classList.add('active');
             });
+        });
+
+        // Handle dropdown items
+        dropdownItems.forEach(item => {
+            item.addEventListener('click', (e) => {
+                e.preventDefault();
+                
+                // Remove active class from all elements
+                navLinks.forEach(l => l.classList.remove('active'));
+                dropdownItems.forEach(i => i.classList.remove('active'));
+                pages.forEach(p => p.classList.remove('active'));
+                
+                // Add active class to clicked item and dropdown button
+                item.classList.add('active');
+                dropdownBtn.classList.add('active');
+                
+                // Show corresponding page
+                const targetPage = item.getAttribute('href').substring(1);
+                document.getElementById(targetPage).classList.add('active');
+                
+                // Close dropdown
+                dropdown.classList.remove('active');
+            });
+        });
+
+        // Handle dropdown toggle
+        dropdownBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            dropdown.classList.toggle('active');
+        });
+
+        // Close dropdown when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!dropdown.contains(e.target)) {
+                dropdown.classList.remove('active');
+            }
         });
 
         // Tab functionality for About section
