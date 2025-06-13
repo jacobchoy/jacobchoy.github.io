@@ -59,20 +59,3 @@ button {
 button:hover {
     opacity: 0.8;
 }
-
-.project-button {
-    display: inline-block;
-    margin-top: 20px;
-    background-color: var(--highlight-color);
-    color: var(--bg-color);
-    text-decoration: none;
-    padding: 10px 20px;
-    font-size: 1.2em;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: opacity 0.3s ease;
-}
-
-.project-button:hover {
-    opacity: 0.8;
-}
